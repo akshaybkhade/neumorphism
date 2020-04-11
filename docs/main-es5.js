@@ -47,7 +47,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<h1>welcome to Neumorphism</h1>";
+    __webpack_exports__["default"] = "<h1>welcome to Neumorphism (Soft UI)</h1>";
     /***/
   },
 

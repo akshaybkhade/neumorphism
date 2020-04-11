@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>welcome to Neumorphism</h1>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>welcome to Neumorphism (Soft UI)</h1>");
 
 /***/ }),
 
