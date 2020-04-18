@@ -35,7 +35,18 @@
     <div class="input-section">
       <div class="ui-controls-section">
         <div class="ui-control-item">
-          Pick a color:
+          <div class="form-group">
+            <label>Pick a color:</label>
+            <input class="color-picker" [(colorPicker)]="color" (colorPickerChange)="changeColor()" [style.background]="color"/>
+          </div>
+          <div class="form-group">
+            <label>Button Size:</label>
+            <input class="form-control" type="number" [value]="buttonSize" #btnSize min="100" max="215" (change)="changeSize(btnSize.value)"/>
+          </div>
+          <div class="form-group">
+            <label>Blue Size:</label>
+            <input class="form-control" type="number" [value]="blurSize" #blrSize min="0" max="100" (change)="changeBlueSize(blrSize.value)"/>
+          </div>
         </div>
       </div>
     </div>

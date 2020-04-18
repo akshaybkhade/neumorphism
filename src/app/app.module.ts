@@ -2,6 +2,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { InlineSVGModule } from "ng-inline-svg";
+import { ColorPickerModule } from "ngx-color-picker";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +15,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InlineSVGModule
+    InlineSVGModule,
+    ColorPickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

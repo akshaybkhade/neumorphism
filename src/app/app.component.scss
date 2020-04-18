@@ -1,10 +1,23 @@
-$primary-color: #ba4e4e;
+@import "theme";
+
+$positionX: var(--positionX);
+$positionXOpposite: var(--positionXOpposite);
+$positionY: var(--positionY);
+$positionYOpposite: var(--positionYOpposite);
+
+$button-size:  var(--buttonSize);
+$blur-size:  var(--blurSize);
+$primary-color:  var(--globalColor);
+$dark-primary-color: var(--globalColorDark);
+$light-primary-color: var(--globalColorLight);
+$darker-primary-color: var(--globalColorDarker);
+$lighter-primary-color: var(--globalColorLighter);
 
 .app-component-wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: rgba($primary-color, 1);
+  background: $primary-color;
   color: white;
   font-family: monospace;
   .web-title {
@@ -17,7 +30,7 @@ $primary-color: #ba4e4e;
     display: flex;
     height: 100%;
     .output-section {
-      flex-basis: 50%;
+      flex-basis: 70%;
       position: relative;
       display: flex;
       justify-content: center;
@@ -40,6 +53,19 @@ $primary-color: #ba4e4e;
                 svg {
                   width: 100%;
                   height: 100%;
+                  path {
+                    fill: $lighter-primary-color;
+
+                    &:nth-child(3) {
+                      fill: black;
+                    }
+                    &:nth-child(5) {
+                      fill: black;
+                    }
+                    &:nth-child(6) {
+                      fill: black;
+                    }
+                  }
                 }
               }
             }
@@ -102,48 +128,49 @@ $primary-color: #ba4e4e;
       }
       .demo-button-item {
         z-index: 10;
-        width: 100px;
-        height: 100px;
+        width: $button-size;
+        height: $button-size;
         background: $primary-color;
         border-radius: 10px;
         margin: 0px 40px;
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid $primary-color;
+        //border: 1px solid $primary-color;
+        border: none;
         outline: none;
 
         &:active {
-          background: linear-gradient(145deg, #a74646, #c75353);
-          box-shadow:  16px 16px 31px #a04343,
-          -16px -16px 31px #d45959;
+          background: linear-gradient(145deg, $darker-primary-color, $lighter-primary-color);
+          box-shadow:  $positionX $positionY $blur-size $dark-primary-color,
+          $positionXOpposite $positionYOpposite $blur-size $light-primary-color;
         }
         p {
           margin-top: 200px;
         }
       }
       .flat-btn {
-        box-shadow:  16px 16px 31px #a04343,
-        -16px -16px 31px #d45959;
+        box-shadow: $positionX $positionY $blur-size $dark-primary-color,
+        $positionXOpposite $positionYOpposite $blur-size $light-primary-color;
       }
       .concave-btn {
-        background: linear-gradient(145deg, #c75353, #a74646);
-        box-shadow:  16px 16px 31px #a04343,
-        -16px -16px 31px #d45959;
+        background: linear-gradient(145deg, $lighter-primary-color, $darker-primary-color);
+        box-shadow: $positionX $positionY $blur-size $dark-primary-color,
+        $positionXOpposite $positionYOpposite $blur-size $light-primary-color;
       }
       .convex-btn {
-        background: linear-gradient(145deg, #a74646, #c75353);
-        box-shadow:  16px 16px 31px #a04343,
-        -16px -16px 31px #d45959;
+        background: linear-gradient(145deg, $darker-primary-color, $lighter-primary-color);
+        box-shadow: $positionX $positionY $blur-size $dark-primary-color,
+        $positionXOpposite $positionYOpposite $blur-size $light-primary-color;
       }
       .pressed-btn {
-        background: #ba4e4e;
-        box-shadow: inset 16px 16px 31px #a04343,
-        inset -16px -16px 31px #d45959;
+        background: $primary-color;
+        box-shadow: inset $positionX $positionY $blur-size $dark-primary-color,
+        inset $positionXOpposite $positionYOpposite $blur-size $light-primary-color;
       }
     }
     .input-section {
-      flex-basis: 50%;
+      flex-basis: 30%;
       display: flex;
       .ui-controls-section {
         margin: 30px;
@@ -151,11 +178,33 @@ $primary-color: #ba4e4e;
         flex-basis: 100%;
         border-radius: 40px;
         font-weight: 600;
-        background: linear-gradient(145deg, #c75353, #a74646);
-        box-shadow:  16px 16px 31px #a04343,
-        -16px -16px 31px #d45959;
+        background: $primary-color;
+        box-shadow: $positionX $positionY $blur-size $dark-primary-color,
+        $positionXOpposite $positionYOpposite $blur-size $light-primary-color;
         .ui-control-item {
-
+          .form-group {
+            display: flex;
+            flex-direction: row;
+            flex-basis: 100%;
+            position: relative;
+            align-items: center;
+            margin-bottom: 10px;
+            label {
+              width: 140px;
+              margin-right: 10px;
+            }
+            .form-control {
+              width: 100px;
+              height: 20px;
+            }
+            .color-picker {
+              width: 20px;
+              height: 20px;
+              border: 1px solid white;
+              position: relative;
+              display: block;
+            }
+          }
         }
       }
     }

@@ -1,0 +1,31 @@
+// default colors
+.theme-wrapper {
+  --positionX: 15px;
+  --positionXOpposite: 15px;
+  --positionY: -15px;
+  --positionYOpposite: -15px;
+
+
+  --buttonSize: 100px;
+  --blurSize: 50px;
+  --globalColor: #ff9543;
+  --globalColorDark: #ff2311;
+  --globalColorLight: #FF9264;
+  --globalColorDarker: #FF9264;
+  --globalColorLighter: #FF9264;
+}
+
+$variables: (
+  --positionX: var(--positionX),
+  --positionXOpposite: var(--positionXOpposite),
+  --positionY: var(--positionY),
+  --positionYOpposite: var(--positionYOpposite),
+
+  --buttonSize: var(--buttonSize),
+  --blurSize: var(--blurSize),
+  --globalColor: var(--globalColor),
+  --globalColorDark: var(--globalColorDark),
+  --globalColorLight: var(--globalColorLight),
+  --globalColorDarker: var(--globalColorDarker),
+  --globalColorLighter: var(--globalColorLighter)
+);
