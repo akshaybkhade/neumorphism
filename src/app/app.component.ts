@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,29 @@ export class AppComponent implements OnInit{
   color = '#ba4e4e';
   buttonSize = '150';
   blurSize = '45';
+  isFeature = false;
   private themeWrapper = document.querySelector('body');
+
+
+  convertedText;
+  showTip = false;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
+
   ngOnInit(): void {
     this.color = '#a54747';
     this.changeColor();
     this.changeSize(this.buttonSize);
     this.changeBlueSize(this.blurSize);
+
+
+    this.activatedRoute.queryParams.subscribe(res => {
+      if (res) {
+        this.isFeature = true;
+      } else {
+        this.isFeature = false;
+      }
+    });
   }
 
   changeColor() {
@@ -63,5 +81,32 @@ export class AppComponent implements OnInit{
     }
 
     return rgb;
+  }
+
+  capitalize(text: string) {
+    this.convertedText = text.toUpperCase();
+  }
+  clear(ref) {
+    ref.value = '';
+    this.convertedText = '';
+  }
+  copy() {
+    this.showTip = true;
+    setTimeout(res => {
+      this.showTip = false;
+    }, 1000);
+
+    let value = this.convertedText;
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = value;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
   }
 }

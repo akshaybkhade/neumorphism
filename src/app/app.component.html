@@ -1,4 +1,4 @@
-<div class="app-component-wrapper">
+<div class="app-component-wrapper" *ngIf="!isFeature">
   <div class="web-title">
     Welcome to Soft UI
   </div>
@@ -49,6 +49,27 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<div class="main-wrapper" *ngIf="isFeature">
+  <div class="box-wrapper">
+    Transform text: <textarea class="form-control" rows="4" cols="50" #inputText></textarea>
+
+    <div class="btns">
+      <button (click)="capitalize(inputText.value)" class="action-button">Capitalize</button>
+      <button (click)="clear(inputText)" class="action-button">Clear</button>
+    </div>
+
+    Result:
+
+    <textarea class="result-text" *ngIf="convertedText" #transformedText [value]="convertedText">
+
+    </textarea>
+    <button (click)="copy()">Copy</button>
+
+    <div class="tip-message" *ngIf="showTip">
+      Done !!!
     </div>
   </div>
 </div>
