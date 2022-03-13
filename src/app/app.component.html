@@ -1,10 +1,7 @@
-<div class="app-component-wrapper" *ngIf="!isFeature">
-  <div class="web-title">
-    Welcome to Soft UI
-  </div>
+<div class="app-component-wrapper">
+  <div class="web-title">Welcome to Soft UI</div>
   <div class="neumorph-wrapper">
     <div class="output-section">
-
       <button class="demo-button-item flat-btn"><p>flat</p></button>
       <button class="demo-button-item concave-btn"><p>concave</p></button>
       <button class="demo-button-item convex-btn"><p>convex</p></button>
@@ -12,22 +9,34 @@
       <div class="light-source-section">
         <div class="light-source left-top light-on">
           <div class="svg-img-block">
-            <div class="svg-img" inlineSVG="../assets/images/flashlight.svg"></div>
+            <div
+              class="svg-img"
+              inlineSVG="../assets/images/flashlight.svg"
+            ></div>
           </div>
         </div>
         <div class="light-source right-top">
           <div class="svg-img-block">
-            <div class="svg-img" inlineSVG="../assets/images/flashlight.svg"></div>
+            <div
+              class="svg-img"
+              inlineSVG="../assets/images/flashlight.svg"
+            ></div>
           </div>
         </div>
         <div class="light-source left-bottom">
           <div class="svg-img-block">
-            <div class="svg-img" inlineSVG="../assets/images/flashlight.svg"></div>
+            <div
+              class="svg-img"
+              inlineSVG="../assets/images/flashlight.svg"
+            ></div>
           </div>
         </div>
         <div class="light-source right-bottom">
           <div class="svg-img-block">
-            <div class="svg-img" inlineSVG="../assets/images/flashlight.svg"></div>
+            <div
+              class="svg-img"
+              inlineSVG="../assets/images/flashlight.svg"
+            ></div>
           </div>
         </div>
       </div>
@@ -37,22 +46,43 @@
         <div class="ui-control-item">
           <div class="form-group">
             <label>Pick a color:</label>
-            <input class="color-picker" [(colorPicker)]="color" (colorPickerChange)="changeColor()" [style.background]="color"/>
+            <input
+              class="color-picker"
+              [(colorPicker)]="color"
+              (colorPickerChange)="changeColor()"
+              [style.background]="color"
+            />
           </div>
           <div class="form-group">
             <label>Button Size:</label>
-            <input class="form-control" type="number" [value]="buttonSize" #btnSize min="100" max="215" (change)="changeSize(btnSize.value)"/>
+            <input
+              class="form-control"
+              type="number"
+              [value]="buttonSize"
+              #btnSize
+              min="100"
+              max="215"
+              (change)="changeSize(btnSize.value)"
+            />
           </div>
           <div class="form-group">
             <label>Blue Size:</label>
-            <input class="form-control" type="number" [value]="blurSize" #blrSize min="0" max="100" (change)="changeBlueSize(blrSize.value)"/>
+            <input
+              class="form-control"
+              type="number"
+              [value]="blurSize"
+              #blrSize
+              min="0"
+              max="100"
+              (change)="changeBlueSize(blrSize.value)"
+            />
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="main-wrapper" *ngIf="isFeature">
+<!-- <div class="main-wrapper" *ngIf="isFeature">
   <div class="box-wrapper">
     Transform text: <textarea class="form-control" rows="4" cols="50" #inputText></textarea>
 
@@ -72,4 +102,4 @@
       Done !!!
     </div>
   </div>
-</div>
+</div> -->

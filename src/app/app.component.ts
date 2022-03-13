@@ -27,13 +27,13 @@ export class AppComponent implements OnInit{
     this.changeBlueSize(this.blurSize);
 
 
-    this.activatedRoute.queryParams.subscribe(res => {
-      if (res) {
-        this.isFeature = true;
-      } else {
-        this.isFeature = false;
-      }
-    });
+    // this.activatedRoute.queryParams.subscribe(res => {
+    //   if (res) {
+    //     this.isFeature = true;
+    //   } else {
+    //     this.isFeature = false;
+    //   }
+    // });
   }
 
   changeColor() {

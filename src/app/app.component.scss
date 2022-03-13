@@ -14,6 +14,7 @@ $darker-primary-color: var(--globalColorDarker);
 $lighter-primary-color: var(--globalColorLighter);
 
 .app-component-wrapper {
+  background: lighten(red, 0.5);
   display: flex;
   flex-direction: column;
   height: 100%;
